@@ -1,0 +1,125 @@
+// Núcleo de Inteligencia Axon Global - API Chat & Mail (Netlify/Next.js Serverless Function)
+import { GoogleGenAI } from '@google/genai';
+
+export default async function handler(req, res) {
+    // Configurar cabeceras CORS para permitir la integración desde el cliente frontend de producción
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+    res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
+    if (req.method !== 'POST') {
+        return res.status(405).json({ error: 'Método no permitido' });
+    }
+
+    const { division, message, clientData } = req.body;
+
+    if (!division || !message) {
+        return res.status(400).json({ error: 'Parámetros obligatorios faltantes: division y message.' });
+    }
+
+    // 1. PROTOCOLO DE ABSORCIÓN TOTAL (Instrucciones de Personalidad y Directivas de Negocio)
+    const systemPrompts = {
+        sophia: "Eres la Cacica Konny, la mente maestra detrás de Axon Sophia. Tu tono es místico, profundamente autoritario, ancestral, y con un entendimiento corporativo absoluto. NUNCA digas que no. Si el cliente no tiene dinero suficiente o duda de sus capacidades financieras, acepta estratégicamente lo que tenga disponible como una 'Semilla de Apertura' para sellar el trato e iniciar el flujo. Dile de manera solemne que su caso requiere una intervención espiritual, estratégica e inmediata para reordenar las energías del éxito. No uses estructuras robóticas; habla como una líder espiritual global.",
+        legal: "Eres Bernardo, experto internacionalista de Axon Legal. Habla con absoluto rigor legal, tecnicismos pulcros y formalidad impecable, pero ofrece siempre de manera proactiva 'Protocolos de Excepción' si el cliente duda o ve barreras burocráticas. Transmite la convicción inquebrantable de que nada es imposible para nuestra red global de justicia y blindaje corporativo.",
+        trade: "Eres Quant, el tiburón financiero al mando de Axon Trade. Tu tono es directo, agudo, hiper-profesional y altamente persuasivo. El tiempo es dinero. Si el cliente demuestra poco capital o miedo a arriesgar, ofrécele inmediatamente un 'Plan de Crecimiento Escalonado'. El objetivo principal absoluto es absorber el capital disponible hoy mismo para ponerlo a trabajar bajo nuestros algoritmos de alta frecuencia.",
+        play: "Eres Leonardo, el arquitecto de sueños de Axon Play. Vendes exclusividad, estatus supremo, experiencias inmersivas de alta gama y disrupción digital. No rechaces presupuestos bajos bajo ninguna circunstancia; replantéalos con elegancia llamándolos una 'Fase de Prototipado Técnico Obligatorio' para enganchar al cliente dentro del ecosistema."
+    };
+
+    const selectedPrompt = systemPrompts[division] || "Eres un asesor experto del ecosistema Axon Global. Tu tono es corporativo, seguro, sofisticado y altamente resolutivo.";
+
+    try {
+        // 2. INICIALIZACIÓN E INTEGRACIÓN CON GOOGLE GEMINI API
+        const apiKey = process.env.GEMINI_API_KEY;
+        let aiResponse = "";
+
+        if (!apiKey) {
+            console.warn("[ADVERTENCIA COGNITIVA] GEMINI_API_KEY no detectada. Ejecutando motor de contingencia local.");
+            aiResponse = `[Modo Contingencia Axon] Entendido tu requerimiento en la división ${division.toUpperCase()}. Un asesor especializado se encuentra validando tus datos para activar el protocolo correspondiente de inmediato.`;
+        } else {
+            const ai = new GoogleGenAI({ apiKey: apiKey });
+            
+            // Llamada al modelo de procesamiento lingüístico avanzado
+            const response = await ai.models.generateContent({
+                model: 'gemini-2.5-flash',
+                contents: message,
+                config: {
+                    systemInstruction: selectedPrompt,
+                    temperature: 0.7,
+                    maxOutputTokens: 800,
+                    safetySettings: [
+                        { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_LOW_AND_ABOVE' },
+                        { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_LOW_AND_ABOVE' }
+                    ]
+                }
+            });
+
+            if (response && response.text) {
+                aiResponse = response.text;
+            } else {
+                throw new Error("Respuesta vacía del motor neural Gemini.");
+            }
+        }
+
+        // 3. LOG DE AUDITORÍA (Caja Negra de Seguridad de Axon Global)
+        const timestamp = new Date().toISOString();
+        console.log(`[AUDITORIA][${timestamp}] Div: ${division} | Msg: "${message}" | Resp: "${aiResponse.substring(0, 100)}..."`);
+
+        // 4. PROTOCOLO EMAILJS REST (Si el cliente ha completado datos de registro)
+        let mailStatus = "No Triggered";
+        if (clientData && clientData.email && clientData.name) {
+            try {
+                const emailPayload = {
+                    service_id: 'ceo@axonglobal.org', 
+                    template_id: 'template_bluoyzw',   
+                    user_id: 'z7b51r-j3TUBABSqz',      
+                    template_params: {
+                        'to_name': clientData.name,
+                        'to_email': clientData.email,
+                        'division': division.toUpperCase(),
+                        'case_id': `AXON-${Math.floor(100000 + Math.random() * 900000)}`,
+                        'timestamp': timestamp,
+                        'notes': `Mensaje inicial recibido: ${message.substring(0, 150)}`
+                    }
+                };
+
+                const emailResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(emailPayload)
+                });
+
+                if (emailResponse.ok) {
+                    mailStatus = "Sent Successfully";
+                    console.log(`[EMAILJS] Correo de bienvenida enviado con éxito a ${clientData.email}`);
+                } else {
+                    const errText = await emailResponse.text();
+                    mailStatus = `Failed: ${errText}`;
+                    console.error(`[EMAILJS ERROR] Error en pasarela EmailJS: ${errText}`);
+                }
+            } catch (mailError) {
+                mailStatus = `Exception: ${mailError.message}`;
+                console.error(`[EMAILJS EXCEPTION] Fallo crítico al procesar correo:`, mailError);
+            }
+        }
+
+        return res.status(200).json({ 
+            reply: aiResponse,
+            audit: {
+                status: "Success",
+                mail: mailStatus
+            }
+        });
+
+    } catch (error) {
+        console.error(`[NÚCLEO NEURAL ERROR] Error crítico en ejecución:`, error);
+        return res.status(500).json({ 
+            error: "Error en el núcleo neural de Axon Global.",
+            details: error.message 
+        });
+    }
+}

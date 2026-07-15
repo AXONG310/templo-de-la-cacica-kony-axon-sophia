@@ -1,0 +1,17 @@
+{
+  "short_name": "Axon",
+  "name": "Axon Global Unified Ecosystem",
+  "icons": [
+    {
+      "src": "image_a856d8.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#05010a",
+  "theme_color": "#00f3ff",
+  "display": "standalone",
+  "orientation": "portrait"
+}
