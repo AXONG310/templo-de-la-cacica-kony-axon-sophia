@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Templo de la Cacica Kony - Místico Premium</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght=400;700&family=Montserrat:wght=300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración del Motor de Traducción Automática de Google (Forzado a Native Select) -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'es',
+                includedLanguages: 'en,es,fr,pt,it,de,ru,zh,ja,ht',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- SDK Oficial de Producción de PayPal -->
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+
+    <!-- SDK Oficial de Producción del Botón de Pagos de Bold -->
+    <script src="https://checkout.bold.co/library/boldPaymentButton.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepDark: '#0b0c10',
+                        mysticGold: '#c5a059',
+                        goldHover: '#e0c07d',
+                        spiritualViolet: '#4b0082',
+                        violetLight: '#6a0dad',
+                        clearText: '#f5f5f5',
+                        neutralGray: '#a0a0a0',
+                    },
+                    fontFamily: {
+                        titles: ['Cinzel', 'serif'],
+                        body: ['Montserrat', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 4px 15px rgba(197, 160, 89, 0.4)',
+                        'violet-glow': '0 4px 20px rgba(75, 0, 130, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .gold-border-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(197, 160, 89, 0.1);
+        }
+        
+        .gold-border-hover:hover {
+            border-color: #c5a059;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(197, 160, 89, 0.25);
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .watermark-bg {
+            background-image: url('image_0bb424.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 55vw;
+            background-attachment: fixed;
+            opacity: 0.22;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .watermark-bg { background-size: 100vw; opacity: 0.26; }
+        }
+
+        /* --- BLINDAJE CSS PARA EL TRADUCTOR DE GOOGLE (Cero cuadros blancos) --- */
+        .goog-te-banner-frame, .goog-te-banner-frame.skiptranslate { display: none !important; }
+        body { top: 0px !important; }
+        
+        /* Oculta los contenedores y el logo de Google */
+        .goog-te-gadget { 
+            color: transparent !important; 
+            font-size: 0px !important; 
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        .goog-logo-link, .goog-te-gadget span {
+            display: none !important;
+        }
+        
+        /* Estiliza agresivamente el select nativo */
+        .goog-te-gadget .goog-te-combo { 
+            background-color: #0b0c10 !important; 
+            color: #c5a059 !important; 
+            border: 1px solid rgba(197, 160, 89, 0.4) !important; 
+            border-radius: 8px !important; 
+            padding: 4px 8px !important;
+            font-family: 'Montserrat', sans-serif !important;
+            font-size: 12px !important;
+            outline: none !important;
+            cursor: pointer !important;
+            margin: 0 !important;
+            display: block !important; /* Forzamos a que solo se vea el select */
+        }
+        .goog-te-gadget .goog-te-combo:focus {
+            border-color: #c5a059 !important;
+        }
+        /* ---------------------------------------------------------------------- */
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #0b0c10; }
+        ::-webkit-scrollbar-thumb { background: #4b0082; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c5a059; }
+
+        .libro-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.12);
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .libro-card:hover {
+            border-color: #c5a059;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(197, 160, 89, 0.2);
+        }
+
+        .libro-portada-contenedor {
+            width: 100%;
+            height: 200px; 
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #050508;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .libro-portada {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .libro-card:hover .libro-portada {
+            transform: scale(1.04);
+        }
+
+        .libro-coleccion {
+            font-size: 0.65rem;
+            color: #c5a059;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            display: block;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .libro-titulo {
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            margin: 4px 0;
+            color: #f5f5f5;
+            font-weight: 700;
+            line-clamp: 2;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.5rem;
+            line-height: 1.25;
+        }
+
+        .libro-codigo {
+            font-size: 0.7rem;
+            color: #a0a0a0;
+            font-family: monospace;
+            margin-bottom: 2px;
+            opacity: 0.85;
+        }
+
+        .libro-editorial {
+            font-size: 0.7rem;
+            color: #8c8575;
+            font-style: italic;
+        }
+
+        /* Ocultar las flechas de los input type number */
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="bg-deepDark text-clearText font-body smooth-scroll antialiased relative">
+
+    <div class="absolute inset-0 watermark-bg z-0"></div>
+
+    <!-- Barra de Navegación Global -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="https://www.axonglobal.org" class="font-titles text-xl md:text-2xl text-mysticGold font-bold tracking-wider">Templo Cacica Kony</a>
+            
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1.5">
+                    <span class="text-[10px] text-mysticGold font-bold uppercase tracking-wider hidden sm:inline">Moneda:</span>
+                    <select id="currency-selector" onchange="cambiarMonedaGlobal(this.value)" class="bg-deepDark text-mysticGold border border-mysticGold/40 rounded-lg px-2 py-1 text-xs font-medium focus:outline-none focus:border-mysticGold">
+                        <option value="COP" selected>COP ($ - Colombia)</option>
+                        <option value="USD">USD ($ - EE.UU. / El Salvador)</option>
+                        <option value="MXN">MXN ($ - México)</option>
+                        <option value="PEN">PEN (S/. - Perú)</option>
+                        <option value="GTQ">GTQ (Q - Guatemala)</option>
+                        <option value="CRC">CRC (₡ - Costa Rica)</option>
+                        <option value="HTG">HTG (G - Haití)</option>
+                        <option value="VES">VES (Bs.S - Venezuela)</option>
+                        <option value="EUR">EUR (€ - Unión Europea)</option>
+                        <option value="RUB">RUB (₽ - Rusia)</option>
+                        <option value="CAD">CAD ($ - Canadá)</option>
+                        <option value="AUD">AUD ($ - Australia)</option>
+                        <option value="NZD">NZD ($ - Nueva Zelanda)</option>
+                    </select>
+                </div>
+                
+                <div id="google_translate_element"></div>
+            </div>
+
+            <div class="hidden lg:flex items-center space-x-6 text-xs uppercase tracking-widest font-medium">
+                <a href="#oraculo-primera-plana" class="hover:text-mysticGold transition">Oráculo</a>
+                <a href="#servicios" class="hover:text-mysticGold transition">Servicios</a>
+                <a href="#oraculo" class="hover:text-mysticGold transition">Consultas</a>
+                <a href="#biblioteca" class="hover:text-mysticGold transition">Biblioteca</a>
+                <a href="#testimonios" class="hover:text-mysticGold transition">Testimonios</a>
+                <a href="#seccion-desplegables" class="hover:text-mysticGold transition">PQRS y Términos</a>
+            </div>
+            <a href="#servicios" class="bg-mysticGold text-deepDark px-4 py-2 rounded-full text-xs uppercase font-bold tracking-wider hover:bg-goldHover transition shadow-gold-glow">Contratar</a>
+        </div>
+    </nav>
+
+    <!-- Cabecera e Interfaz del Oráculo Interactivo Principal -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-12 overflow-hidden z-10 max-w-5xl mx-auto px-4 sm:px-6">
+        <div class="text-center mb-6">
+            <p class="font-titles text-mysticGold text-xs md:text-sm tracking-widest mb-2 opacity-90">BIENVENIDO AL PORTAL SAGRADO</p>
+            <h1 class="font-titles text-4xl sm:text-5xl md:text-6xl text-clearText font-bold mb-3 leading-tight tracking-tight">El Templo de la <span class="text-mysticGold">Cacica Kony</span></h1>
+            <p class="text-xs md:text-sm text-neutralGray max-w-2xl mx-auto leading-relaxed">Canalización en tiempo real, consultas metafísicas y transacciones de alta fidelidad bajo el respaldo de Axon Global.</p>
+        </div>
+
+        <div id="oraculo-primera-plana" class="glass w-full max-w-xl h-[440px] md:h-[480px] rounded-2xl shadow-violet-glow flex flex-col overflow-hidden border border-spiritualViolet/50">
+            <div class="bg-spiritualViolet px-4 py-3 flex items-center justify-between border-b border-mysticGold/20">
+                <div class="flex items-center gap-3">
+                    <img src="image_faf315.png" alt="Cacica Kony" class="w-9 h-9 rounded-full border border-mysticGold object-cover shadow-sm">
+                    <div>
+                        <h4 class="font-titles text-mysticGold text-xs md:text-sm font-bold tracking-wider">Cacica Kony</h4>
+                        <p class="text-[9px] text-neutralGray">Canalizando flujo astral continuo en vivo...</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-mysticGold rounded-full animate-pulse"></div>
+                    <span class="text-[10px] text-clearText/80 font-medium">Conexión Viva</span>
+                </div>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto flex flex-col gap-4 text-xs bg-deepDark/75">
+                <div class="flex gap-2.5 max-w-[88%] self-start items-end">
+                    <img src="image_faf315.png" class="w-7 h-7 rounded-full border border-mysticGold object-cover mb-0.5">
+                    <div class="bg-spiritualViolet/20 text-clearText p-3 rounded-xl rounded-tl-none leading-relaxed text-justify">
+                        Bendiciones, mi criatura amada. He abierto el portal cuántico de la división Axon Sophia para guiarte. Veo hilos cruzados en tu línea de tiempo, pero todo tiene solución en mi Altar... Pregúntame sobre cualquier misterio, protección, amarre o justicia que desees resolver hoy. ¿Qué buscas transmutar y dominar?
+                    </div>
+                </div>
+            </div>
+            <div class="p-3.5 border-t border-white/5 flex gap-2 bg-deepDark/95">
+                <input type="text" id="chat-input" placeholder="Escribe tu consulta amado/a..." class="flex-1 bg-deepDark border border-white/10 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-mysticGold text-clearText" onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()" class="bg-mysticGold text-deepDark px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-goldHover transition uppercase tracking-wider shadow-gold-glow">Consultar</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Parrilla de Ofertas / Servicios de Alto Poder -->
+    <section id="servicios" class="py-20 px-4 sm:px-6 relative z-10 bg-deepDark/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-14">
+                <p class="font-titles text-mysticGold text-xs tracking-widest mb-2 opacity-90">RITUALES Y TRABAJOS SAGRADOS</p>
+                <h2 class="font-titles text-3xl md:text-5xl text-clearText font-bold mb-4">Servicios de Alto Poder</h2>
+                <div class="w-20 h-0.5 bg-mysticGold mx-auto rounded-full"></div>
+            </div>
+
+            <div id="grid-servicios" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Modal Transaccional Multicanal de Producción de Monto Abierto (Bold / PayPal / QR Bre-B / Cuentas USD-EUR) -->
+    <div id="payment-modal" class="fixed inset-0 z-[100] bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="glass max-w-lg w-full rounded-2xl p-6 border border-mysticGold/20 shadow-gold-glow relative max-h-[92vh] overflow-y-auto">
+            <button onclick="closeModal('payment-modal')" class="absolute top-4 right-4 text-clearText/60 hover:text-clearText text-xl z-20">✕</button>
+            
+            <div class="text-center mb-4">
+                <h3 class="font-titles text-mysticGold text-xl font-bold mb-1">Orden de Alta Conexión</h3>
+                <div class="w-12 h-0.5 bg-mysticGold mx-auto mb-3"></div>
+                <p id="modal-service-name" class="text-base text-clearText font-semibold"></p>
+                
+                <!-- Campo de Precio Editable Dinámicamente -->
+                <div class="flex items-center justify-center gap-1.5 mt-2">
+                    <span class="text-xl text-mysticGold font-bold">$</span>
+                    <input type="number" id="modal-service-price-input" oninput="actualizarPrecioManual(this.value)" class="text-2xl text-mysticGold font-bold bg-deepDark/50 border border-mysticGold/40 rounded-lg text-center focus:outline-none focus:border-mysticGold w-40 py-1 transition-all" />
+                    <span class="text-sm text-mysticGold font-bold mt-1">COP</span>
+                </div>
+                <p class="text-[9px] text-mysticGold/80 mt-1.5 uppercase tracking-wider font-semibold">✏️ Puedes editar el valor a pagar según mutuo acuerdo</p>
+                
+                <p id="modal-service-usd" class="text-xs text-neutralGray italic mt-1.5"></p>
+            </div>
+
+            <!-- Navegación por Pestañas de Métodos de Pago -->
+            <div class="flex border-b border-white/10 mb-4 text-center">
+                <button id="tab-btn-pasarelas" onclick="switchPaymentTab('pasarelas')" class="flex-1 py-2 text-xs font-bold text-mysticGold border-b-2 border-mysticGold uppercase tracking-wider transition">
+                    💳 Tarjeta / PayPal
+                </button>
+                <button id="tab-btn-qr" onclick="switchPaymentTab('qr')" class="flex-1 py-2 text-xs font-bold text-neutralGray border-b-2 border-transparent hover:text-clearText uppercase tracking-wider transition">
+                    📱 QR / Bre-B (COP)
+                </button>
+                <button id="tab-btn-intl" onclick="switchPaymentTab('intl')" class="flex-1 py-2 text-xs font-bold text-neutralGray border-b-2 border-transparent hover:text-clearText uppercase tracking-wider transition">
+                    🌐 USD / EUR
+                </button>
+            </div>
+
+            <!-- CONTENIDO PESTAÑA 1: Pasarelas Automatizadas Directas -->
+            <div id="tab-content-pasarelas" class="space-y-4">
+                <div class="p-4 rounded-xl bg-deepDark/60 border border-white/5 space-y-3 text-center">
+                    <h5 class="text-mysticGold font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 mb-1">🇨🇴 Tarjetas de Crédito, Débito y PSE (Bold)</h5>
+                    <p class="text-[10px] text-neutralGray leading-relaxed">
+                        Procesa tu pago de forma segura. El monto a cobrar será de $<span id="bold-dynamic-price" class="font-bold text-clearText"></span> COP.
+                    </p>
+                    <button onclick="ejecutarPasarelaBold()" class="w-full bg-[#E51F41] text-clearText py-2.5 rounded-lg text-xs font-bold tracking-widest hover:bg-[#C41835] transition uppercase shadow-md">
+                        Pagar con Bold / PSE
+                    </button>
+                </div>
+
+                <div class="p-4 rounded-xl bg-deepDark/60 border border-white/5 text-center">
+                    <h5 class="text-mysticGold font-semibold text-xs uppercase tracking-wider mb-2.5">🌎 Pasarela Internacional (PayPal)</h5>
+                    <div id="paypal-button-container" class="w-full min-h-[45px]"></div>
+                </div>
+            </div>
+
+            <!-- CONTENIDO PESTAÑA 2: Códigos QR y Llaves Bre-B (Colombia) -->
+            <div id="tab-content-qr" class="hidden space-y-4">
+                <div class="p-3 bg-spiritualViolet/20 border border-spiritualViolet/40 rounded-xl text-[11px] text-center text-clearText">
+                    Escanea el código QR de tu preferencia o usa la llave digital desde la App de tu banco.
+                </div>
+
+                <!-- Selector de Tipo de QR -->
+                <div class="flex gap-2 justify-center mb-2">
+                    <button onclick="switchQrView('nequi')" id="qr-btn-nequi" class="px-3 py-1.5 rounded-lg text-[10px] font-bold bg-mysticGold text-deepDark uppercase">Nequi Negocios</button>
+                    <button onclick="switchQrView('bancolombia')" id="qr-btn-bancolombia" class="px-3 py-1.5 rounded-lg text-[10px] font-bold bg-deepDark border border-white/10 text-neutralGray uppercase">Bancolombia</button>
+                    <button onclick="switchQrView('boldqr')" id="qr-btn-boldqr" class="px-3 py-1.5 rounded-lg text-[10px] font-bold bg-deepDark border border-white/10 text-neutralGray uppercase">Bold / Bre-B</button>
+                </div>
+
+                <!-- Visor QR 1: Nequi Negocios -->
+                <div id="qr-view-nequi" class="p-4 rounded-xl bg-deepDark/80 border border-white/5 text-center space-y-3">
+                    <p class="text-xs font-bold text-mysticGold">QR Bre-B Nequi Negocios</p>
+                    <div class="flex justify-center">
+                        <img src="WhatsApp Image 2026-09-03 at 7.19.35 PM.jpeg" alt="QR Nequi Negocios" class="w-48 h-auto rounded-lg border border-mysticGold/30 shadow-md">
+                    </div>
+                    <div class="bg-deepDark p-2.5 rounded-lg border border-white/10 flex items-center justify-between">
+                        <div class="text-left">
+                            <span class="text-[9px] text-neutralGray uppercase block">Llave Nequi Negocios</span>
+                            <span class="text-xs font-mono text-mysticGold font-bold">0092739311</span>
+                        </div>
+                        <button onclick="copiarTexto('0092739311', 'Llave Nequi Copiada')" class="bg-mysticGold/20 text-mysticGold border border-mysticGold/40 px-2.5 py-1 rounded text-[10px] font-bold hover:bg-mysticGold hover:text-deepDark transition">Copiar</button>
+                    </div>
+                </div>
+
+                <!-- Visor QR 2: Bancolombia -->
+                <div id="qr-view-bancolombia" class="hidden p-4 rounded-xl bg-deepDark/80 border border-white/5 text-center space-y-3">
+                    <p class="text-xs font-bold text-mysticGold">QR Bre-B Bancolombia</p>
+                    <div class="flex justify-center">
+                        <img src="Qr_Digital_INVERSIONES_SYT.png" alt="QR Bancolombia Inversiones Syt" class="w-48 h-auto rounded-lg border border-mysticGold/30 shadow-md">
+                    </div>
+                    <div class="bg-deepDark p-2.5 rounded-lg border border-white/10 flex items-center justify-between">
+                        <div class="text-left">
+                            <span class="text-[9px] text-neutralGray uppercase block">Llave Bancolombia</span>
+                            <span class="text-xs font-mono text-mysticGold font-bold">@inversionessyt</span>
+                        </div>
+                        <button onclick="copiarTexto('@inversionessyt', 'Llave Bancolombia Copiada')" class="bg-mysticGold/20 text-mysticGold border border-mysticGold/40 px-2.5 py-1 rounded text-[10px] font-bold hover:bg-mysticGold hover:text-deepDark transition">Copiar</button>
+                    </div>
+                </div>
+
+                <!-- Visor QR 3: Bold Interoperable -->
+                <div id="qr-view-boldqr" class="hidden p-4 rounded-xl bg-deepDark/80 border border-white/5 text-center space-y-3">
+                    <p class="text-xs font-bold text-mysticGold">QR Bold Bre-B (Cualquier Banco)</p>
+                    <div class="flex justify-center">
+                        <img src="QR-Bold (1).png" alt="QR Bold Interoperable Bre-B" class="w-48 h-auto rounded-lg border border-mysticGold/30 shadow-md">
+                    </div>
+                    <p class="text-[9px] text-neutralGray">Permite pagos inmediatos hasta de $10.000.000 COP desde cualquier app bancaria.</p>
+                </div>
+
+                <!-- Botón de Envío de Comprobante por WhatsApp -->
+                <a href="https://wa.me/573024979668?text=Hola,%20adjunto%20comprobante%20de%20pago%20para%20activar%20mi%20servicio" target="_blank" class="w-full bg-[#25D366] text-deepDark py-2.5 rounded-lg text-xs font-bold tracking-wider hover:bg-[#20ba5a] transition uppercase flex items-center justify-center gap-2 shadow-md">
+                    <span>💬</span> Enviar Comprobante por WhatsApp
+                </a>
+            </div>
+
+            <!-- CONTENIDO PESTAÑA 3: Transferencias Internacionales (USD / EUR) -->
+            <div id="tab-content-intl" class="hidden space-y-4">
+                <div class="p-3 bg-spiritualViolet/20 border border-spiritualViolet/40 rounded-xl text-[11px] text-center text-clearText">
+                    Transfiere directamente en USD o EUR desde tu cuenta internacional o plataforma multidivisa.
+                </div>
+
+                <!-- Cuenta en USD (Estados Unidos) -->
+                <div class="p-4 rounded-xl bg-deepDark/80 border border-white/5 space-y-2 text-xs">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-1.5">
+                        <span class="font-bold text-mysticGold flex items-center gap-1.5">🇺🇸 Transferencia USD (ACH / Wire)</span>
+                        <span class="text-[9px] bg-white/10 px-2 py-0.5 rounded text-neutralGray">EE.UU.</span>
+                    </div>
+                    <div class="space-y-1 text-[11px] text-neutralGray">
+                        <p><strong class="text-clearText">Titular:</strong> JAVIER SANTANA CORTES</p>
+                        <p><strong class="text-clearText">Banco:</strong> Lead Bank</p>
+                        <div class="flex justify-between items-center bg-deepDark p-1.5 rounded border border-white/5 mt-1">
+                            <span>N° Cuenta: <strong class="text-mysticGold font-mono">216325046753</strong></span>
+                            <button onclick="copiarTexto('216325046753', 'Número de cuenta USD copiado')" class="text-[9px] bg-mysticGold/20 text-mysticGold px-2 py-0.5 rounded hover:bg-mysticGold hover:text-deepDark">Copiar</button>
+                        </div>
+                        <div class="flex justify-between items-center bg-deepDark p-1.5 rounded border border-white/5">
+                            <span>ABA / N° Ruta: <strong class="text-mysticGold font-mono">101019644</strong></span>
+                            <button onclick="copiarTexto('101019644', 'Número ABA copiado')" class="text-[9px] bg-mysticGold/20 text-mysticGold px-2 py-0.5 rounded hover:bg-mysticGold hover:text-deepDark">Copiar</button>
+                        </div>
+                        <p class="text-[9px] italic text-neutralGray/70 mt-1">Tipo: Corriente | Dirección: 1801 Main St. Kansas City, MO 64108, EE.UU.</p>
+                    </div>
+                </div>
+
+                <!-- Cuenta en EUR (Unión Europea) -->
+                <div class="p-4 rounded-xl bg-deepDark/80 border border-white/5 space-y-2 text-xs">
+                    <div class="flex items-center justify-between border-b border-white/10 pb-1.5">
+                        <span class="font-bold text-mysticGold flex items-center gap-1.5">🇪🇺 Transferencia EUR (SEPA / IBAN)</span>
+                        <span class="text-[9px] bg-white/10 px-2 py-0.5 rounded text-neutralGray">Luxemburgo</span>
+                    </div>
+                    <div class="space-y-1 text-[11px] text-neutralGray">
+                        <p><strong class="text-clearText">Titular:</strong> Bridge Building S.A.</p>
+                        <p><strong class="text-clearText">País Banco:</strong> Luxemburgo</p>
+                        <div class="flex justify-between items-center bg-deepDark p-1.5 rounded border border-white/5 mt-1">
+                            <span>IBAN: <strong class="text-mysticGold font-mono text-[10px]">LU37 4080 0000 4766 2837</strong></span>
+                            <button onclick="copiarTexto('LU374080000047662837', 'IBAN EUR copiado')" class="text-[9px] bg-mysticGold/20 text-mysticGold px-2 py-0.5 rounded hover:bg-mysticGold hover:text-deepDark">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/573024979668?text=Hola,%20adjunto%20comprobante%20de%20transferencia%20internacional" target="_blank" class="w-full bg-[#25D366] text-deepDark py-2.5 rounded-lg text-xs font-bold tracking-wider hover:bg-[#20ba5a] transition uppercase flex items-center justify-center gap-2 shadow-md">
+                    <span>💬</span> Notificar Transferencia Internacional
+                </a>
+            </div>
+
+            <!-- Generador de Links de Pago Dinámicos -->
+            <div class="pt-3 mt-4 border-t border-white/10 text-center">
+                <button onclick="generarLinkPago()" class="text-[10px] text-mysticGold font-medium hover:underline uppercase tracking-wider flex items-center justify-center gap-1.5 w-full py-1">
+                    🔗 Generar Link de Pago y Copiar al Portapapeles
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Consultas / Oráculo Premium -->
+    <section id="oraculo" class="py-20 px-4 sm:px-6 relative z-10 bg-deepDark">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_var(--tw-gradient-stops))] from-spiritualViolet/10 via-deepDark to-deepDark z-0"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-14">
+                <p class="font-titles text-mysticGold text-xs tracking-widest mb-2 opacity-90">MODALIDAD VIRTUAL (ZOOM) O PRESENCIAL</p>
+                <h2 class="font-titles text-3xl md:text-5xl text-clearText font-bold mb-4">Oráculo y Consultas Premium</h2>
+                <div class="w-20 h-0.5 bg-mysticGold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <div class="glass p-6 rounded-xl flex flex-col justify-between text-center gold-border-hover">
+                    <div class="space-y-4">
+                        <h4 class="font-titles text-clearText text-xl font-bold">Lectura Express</h4>
+                        <p class="text-mysticGold font-bold text-2xl id-precio-express">$120.000 <span class="text-xs text-neutralGray">COP</span></p>
+                        <div class="w-10 h-px bg-white/10 mx-auto my-2"></div>
+                        <p class="text-xs text-neutralGray leading-relaxed">30 min por Zoom / Tirada general / 3 preguntas concretas.</p>
+                    </div>
+                    <button onclick="openPaymentModal('Lectura Express (Consulta)', '120.000')" class="w-full bg-transparent border border-spiritualViolet text-clearText py-2.5 rounded-lg text-xs uppercase font-bold tracking-wider hover:bg-spiritualViolet transition mt-6">Agendar Express</button>
+                </div>
+
+                <div class="glass p-6 rounded-xl flex flex-col justify-between text-center border-2 border-mysticGold scale-100 md:scale-105 shadow-gold-glow relative">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-mysticGold text-deepDark px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">La Más Vendida</span>
+                    <div class="space-y-4 mt-2">
+                        <h4 class="font-titles text-clearText text-xl font-bold">Lectura Completa</h4>
+                        <p class="text-mysticGold font-bold text-3xl id-precio-completa">$180.000 <span class="text-xs text-neutralGray">COP</span></p>
+                        <div class="w-10 h-px bg-white/10 mx-auto my-2"></div>
+                        <p class="text-xs text-neutralGray leading-relaxed">60 min por Zoom / Análisis profundo (Amor, Dinero) / Preguntas ilimitadas.</p>
+                    </div>
+                    <button onclick="openPaymentModal('Lectura Completa (Consulta)', '180.000')" class="w-full bg-mysticGold text-deepDark py-3 rounded-lg text-xs uppercase font-bold tracking-wider hover:bg-goldHover transition mt-6">Agendar Completa</button>
+                </div>
+
+                <div class="glass p-6 rounded-xl flex flex-col justify-between text-center gold-border-hover">
+                    <div class="space-y-4">
+                        <h4 class="font-titles text-clearText text-xl font-bold">Trascendencia Premium</h4>
+                        <p class="text-mysticGold font-bold text-2xl id-precio-premium">$270.000 <span class="text-xs text-neutralGray">COP</span></p>
+                        <div class="w-10 h-px bg-white/10 mx-auto my-2"></div>
+                        <p class="text-xs text-neutralGray leading-relaxed">90 min por Zoom / Lectura + Carta Astral / Ritual de limpieza energética remota.</p>
+                    </div>
+                    <button onclick="openPaymentModal('Trascendencia Premium (Consulta)', '270.000')" class="w-full bg-transparent border border-spiritualViolet text-clearText py-2.5 rounded-lg text-xs uppercase font-bold tracking-wider hover:bg-spiritualViolet transition mt-6">Agendar Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Biblioteca Digital Totalmente Gratuita Con Enlaces de Descarga Directos a GitHub -->
+    <section id="biblioteca" class="py-20 px-4 sm:px-6 relative z-10 bg-deepDark/40">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10">
+                <p class="font-titles text-mysticGold text-xs tracking-widest mb-2 opacity-90">SABIDURÍA COMPARTIDA</p>
+                <h2 class="font-titles text-3xl md:text-5xl text-clearText font-bold mb-4">Biblioteca Digital Gratuita</h2>
+                <div class="w-20 h-0.5 bg-mysticGold mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Bloque Teológico Acordeón -->
+            <div class="max-w-4xl mx-auto mb-12">
+                <button onclick="toggleAccordion('nag-hammadi-theology-accordion')" class="w-full glass rounded-xl p-5 border border-mysticGold/30 flex items-center justify-between text-left focus:outline-none hover:border-mysticGold/60 transition shadow-lg">
+                    <div class="flex items-center gap-3">
+                        <span class="text-xl">📜</span>
+                        <div>
+                            <h3 class="font-titles text-mysticGold text-sm md:text-base font-bold uppercase tracking-wider">Compendio Histórico: Manuscritos de Nag Hammadi</h3>
+                            <p class="text-[10px] text-neutralGray uppercase tracking-widest">Estudios de Códices Coptos de Kenoboskion y el Evangelio de la Verdad</p>
+                        </div>
+                    </div>
+                    <span id="nag-hammadi-theology-accordion-icon" class="text-mysticGold font-bold text-sm transition-transform duration-300">▼</span>
+                </button>
+                
+                <div id="nag-hammadi-theology-accordion" class="hidden mt-3 transition-all duration-300">
+                    <div class="glass rounded-xl p-6 md:p-8 border border-white/5 bg-deepDark/90 text-left text-xs md:text-sm text-neutralGray leading-relaxed space-y-4">
+                        <p class="text-justify">
+                            A finales de 1945 fueron hallados los Manuscritos de Nag Hammadi junto al macizo Jabel-al Tarif, una montaña que está a la derecha del Nilo mirando hacia el Delta, cerca de la población de Nag Hammadi, que en la antigüedad se llamaba Kenoboskion y está al otro lado del río. Los manuscritos son <strong>"una colección de trece códices con folios de papiro escritos en ambas caras, encuadernados en fino cuero de cabra"</strong>.
+                        </p>
+                        <p class="text-justify">
+                            Los manuscritos tienen forma de códice, no de rollo. Son "traducciones en diversos dialectos coptos", "de originales griegos", "el número de los escritos es de cincuenta y dos, algunos repetidos y otros fragmentarios". Los códices estaban "en una jarra de cerámica roja de un poco más de medio metro de altura, con su boca herméticamente cerrada por una escudilla pegada a ella con betún".
+                        </p>
+                        
+                        <h4 class="font-titles text-clearText text-sm font-bold pt-2 border-b border-white/5 pb-1 uppercase tracking-wider">1. Datos en las Tapas e Importancia Histórica</h4>
+                        <p class="text-justify">
+                            Al desencuadernar las tapas de los códices para poder conservar las hojas de papiro entre láminas transparentes de plástico, se descubren datos importantes en algunas de las tapas. Estos documentos, encontrados en las encuadernaciones, tenían por finalidad dar mayor consistencia al cuero y han permitido una aproximación más precisa a la cronología y a los lugares de donde provendrían los códices.
+                        </p>
+
+                        <blockquote class="bg-white/5 border-l-4 border-mysticGold p-4 my-3 italic text-clearText/90">
+                            "Somos despised de los mundos, aunque ningún interés les prestamos cuando nos difaman. Los ignoramos cuando nos persiguen. Cuando nos humillan, les miramos y guardamos silencio" <br><small class="text-mysticGold block mt-1 font-sans font-semibold">— Enseñanza autorizada NHC VI, 3, 27,5-29,10.</small>
+                        </blockquote>
+
+                        <h4 class="font-titles text-clearText text-sm font-bold pt-2 border-b border-white/5 pb-1 uppercase tracking-wider">2. Estructura de los Trece Códices</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-[11px] bg-deepDark/40 p-4 rounded-xl border border-white/5">
+                            <div><span class="text-mysticGold font-bold">Códice I (Códice Jung):</span> Apócrifo de Santiago, Libro de la Verdad, Tratado sobre la Resurrección (Epístola a Regino), Tratado tripartito, Plegaria del apóstol Pablo.</div>
+                            <div><span class="text-mysticGold font-bold">Códice II:</span> Apócrifo de Juan (versión larga), Evangelio de Tomás, Evangelio de Felipe, Hipóstasis de los arcontes, Sobre el origen del mundo, Exposición sobre el alma, Libro de Tomás el Atleta.</div>
+                            <div><span class="text-mysticGold font-bold">Códice III:</span> Apócrifo de Juan (versión breve), Evangelio de los egipcios, Carta de Eugnosto el Bienaventurado, Sabiduría de Jesucristo, Diálogo del Salvador.</div>
+                            <div><span class="text-mysticGold font-bold">Códice IV:</span> Apócrifo de Juan (versión larga) y Evangelio de los egipcios.</div>
+                            <div><span class="text-mysticGold font-bold">Códice V:</span> Carta de Eugnosto, Apocalipsis de Pablo, Primer y Segundo apocalipsis de Santiago, Apocalipsis de Adán.</div>
+                            <div><span class="text-mysticGold font-bold">Códice VI:</span> Hechos de Pedro y los doce Apóstoles, El Trueno, la mente perfecta, Enseñanza autorizada, El pensamiento de nuestro Gran Poder, Platón (República 588A-589B), Discurso sobre la Ogdóada y la Enéada, Asclepio.</div>
+                            <div><span class="text-mysticGold font-bold">Códice VII:</span> Paráfrasis de Sem, Segundo tratado del gran Set, Apocalipsis de Pedro, Enseñanzas de Silvano, Las tres estelas de Set.</div>
+                            <div><span class="text-mysticGold font-bold">Códice VIII:</span> Zostriano y Carta de Pedro a Felipe.</div>
+                            <div><span class="text-mysticGold font-bold">Códice IX:</span> Melquisedec, El pensamiento de Norea, Testimonio de la Verdad.</div>
+                            <div><span class="text-mysticGold font-bold">Códice X:</span> Marsanes.</div>
+                            <div><span class="text-mysticGold font-bold">Códice XI:</span> La interpretación del conocimiento, Exposición valentiniana, Allógenes, Hipsifrone.</div>
+                            <div><span class="text-mysticGold font-bold">Códice XII:</span> Sentencias de Sexto, Fragmentos del Evangelio de la Verdad.</div>
+                            <div><span class="text-mysticGold font-bold">Códice XIII:</span> El pensamiento trimorfo y Sobre el origen del mundo.</div>
+                        </div>
+
+                        <h4 class="font-titles text-clearText text-sm font-bold pt-2 border-b border-white/5 pb-1 uppercase tracking-wider">3. El Evangelio de la Verdad (NHC I, 3 / NHC XII, 2)</h4>
+                        <p class="text-justify">
+                            El <em>Evangelio de la Verdad</em> destaca por la belleza de su enunciado, siendo considerado como una "obra de poder y belleza", "una preciosa homilía cristiano gnóstica" cuyo autor sería el Maestro gnóstico Valentín o un discípulo próximo. Constituye el Tratado 3 del Códice I o Codex Jung.
+                        </p>
+                        <p class="text-justify">
+                            <strong>Prálogo (16.31-17.4):</strong> El Evangelio de la Verdad es alegría para aquellos que han recibido del Padre de la Verdad la gracia de conocerlo, por medio del Poder de la Palabra (del Verbo, del Cristo) que ha venido desde el Pleroma (desde la Plenitud), la que está en el Pensamiento y en la Inteligencia del Padre, la que es llamada "Salvador", ya que es el nombre de la Obra que debe llevar a cabo para la Redención de aquellos que eran ignorantes del Padre.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grilla Principal de Libros -->
+            <div id="grid-biblioteca" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios Reales -->
+    <section id="testimonios" class="py-20 px-4 sm:px-6 relative z-10 bg-deepDark">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-spiritualViolet/10 via-deepDark to-deepDark z-0"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-14">
+                <p class="font-titles text-mysticGold text-xs tracking-widest mb-2 opacity-90">HISTORIAS REALES DE CAMBIO</p>
+                <h2 class="font-titles text-3xl md:text-5xl text-clearText font-bold mb-4 leading-tight">Testimonios de Fe y Resultados</h2>
+                <div class="w-20 h-0.5 bg-mysticGold mx-auto rounded-full"></div>
+            </div>
+
+            <div id="grid-testimonios" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Formularios Corporativos y Desplegables Legales Obligatorios de Axon Global -->
+    <section id="seccion-desplegables" class="py-16 px-4 sm:px-6 relative z-10 bg-deepDark/60 max-w-3xl mx-auto space-y-6">
+        
+        <div class="w-full">
+            <button onclick="toggleAccordion('pqrs-accordion')" class="w-full glass rounded-xl p-5 border border-spiritualViolet/40 flex items-center justify-between text-left focus:outline-none hover:border-mysticGold/50 transition shadow-md">
+                <div>
+                    <h3 class="font-titles text-mysticGold text-base md:text-lg font-bold">Sistema de PQRS Formal</h3>
+                    <p class="text-[10px] text-neutralGray uppercase tracking-widest">División Axon Sophia | Auditoría de Axon Global</p>
+                </div>
+                <span id="pqrs-accordion-icon" class="text-mysticGold font-bold text-lg transition-transform duration-300">▼</span>
+            </button>
+            
+            <div id="pqrs-accordion" class="hidden mt-3 transition-all duration-300">
+                <div class="glass rounded-xl p-6 md:p-8 border border-white/5 bg-deepDark/80">
+                    <form id="pqrs-form" class="grid grid-cols-1 sm:grid-cols-2 gap-4" onsubmit="radicarPQRS(event)">
+                        <div class="space-y-1 sm:col-span-2">
+                            <label class="text-[10px] text-mysticGold uppercase font-semibold">Tipo de Solicitud</label>
+                            <select required class="w-full bg-deepDark border border-white/10 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-mysticGold text-neutralGray">
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option>Petición</option><option>Queja</option><option>Reclamo</option><option>Sugerencia</option><option>Felicitación</option>
+                            </select>
+                        </div>
+                        <div class="space-y-1 sm:col-span-2">
+                            <label class="text-[10px] text-mysticGold uppercase font-semibold">Nombres y Apellidos</label>
+                            <input type="text" required class="w-full bg-deepDark border border-white/10 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-mysticGold text-clearText">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-mysticGold uppercase font-semibold">Dirección Física</label>
+                            <input type="text" class="w-full bg-deepDark border border-white/10 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-mysticGold text-clearText">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[10px] text-mysticGold uppercase font-semibold">Correo Electrónico</label>
+                            <input type="email" required class="w-full bg-deepDark border border-white/10 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-mysticGold text-clearText">
+                        </div>
+                        <div class="sm:col-span-2 py-0.5">
+                            <label class="text-[10px] text-mysticGold uppercase font-semibold block mb-1">Medio Preferido de Contacto</label>
+                            <div class="flex items-center gap-5 text-xs text-neutralGray">
+                                <label class="flex items-center gap-1 cursor-pointer"><input type="radio" name="contacto" value="Correo" class="accent-spiritualViolet"> Correo</label>
+                                <label class="flex items-center gap-1 cursor-pointer"><input type="radio" name="contacto" value="Teléfono" class="accent-spiritualViolet"> Teléfono</label>
+                                <label class="flex items-center gap-1 cursor-pointer"><input type="radio" name="contacto" value="WhatsApp" class="accent-spiritualViolet"> WhatsApp</label>
+                            </div>
+                        </div>
+                        <div class="space-y-1 sm:col-span-2">
+                            <label class="text-[10px] text-mysticGold uppercase font-semibold">Detalle de la Solicitud</label>
+                            <textarea required rows="3" class="w-full bg-deepDark border border-white/10 rounded-xl px-3 py-2 text-xs focus:outline-none focus:border-mysticGold text-clearText leading-relaxed"></textarea>
+                        </div>
+                        <div class="sm:col-span-2 py-0.5 flex items-start gap-2">
+                            <input type="checkbox" required class="accent-mysticGold mt-0.5">
+                            <p class="text-[10px] text-neutralGray leading-relaxed">Autorizo expresamente a la división Axon Sophia al tratamiento de mis datos personales para gestionar y dar respuesta formal.</p>
+                        </div>
+                        <div class="sm:col-span-2 text-center mt-2">
+                            <button type="submit" class="w-full sm:w-auto bg-transparent border-2 border-mysticGold text-mysticGold px-6 py-2 rounded-full text-xs uppercase font-bold tracking-widest hover:bg-mysticGold hover:text-deepDark transition">Radicar Solicitud</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full">
+            <button onclick="toggleAccordion('terms-accordion')" class="w-full glass rounded-xl p-5 border border-spiritualViolet/40 flex items-center justify-between text-left focus:outline-none hover:border-mysticGold/50 transition shadow-md">
+                <div>
+                    <h3 class="font-titles text-mysticGold text-base md:text-lg font-bold">Términos, Condiciones y Políticas</h3>
+                    <p class="text-[10px] text-neutralGray uppercase tracking-widest">Manual Corporativo Axon Global | Vigencia: 2026</p>
+                </div>
+                <span id="terms-accordion-icon" class="text-mysticGold font-bold text-lg transition-transform duration-300">▼</span>
+            </button>
+            
+            <div id="terms-accordion" class="hidden mt-3 transition-all duration-300">
+                <div class="glass rounded-xl p-5 md:p-6 border border-white/5 bg-deepDark/80 text-[11px] text-neutralGray leading-relaxed space-y-4 text-left">
+                    <div class="space-y-1">
+                        <h6 class="text-clearText/80 font-semibold uppercase text-xs">POLÍTICA GENERAL DE PRIVACIDAD Y HABEAS DATA:</h6>
+                        <p>En cumplimiento de la Ley 1581 de 2012 (Colombia) y el GDPR (Europa). Los datos proporcionados serán utilizados única y exclusivamente para la prestación de los servicios contratados. El usuario reconoce que la información compartida con la división Axon Sophia es de carácter sensible y está protegida por encriptación militar y estricto secreto profesional. ®</p>
+                    </div>
+                    <div class="space-y-1">
+                        <h6 class="text-clearText/80 font-semibold uppercase text-xs">TÉRMINOS Y CONDICIONES GENERALES:</h6>
+                        <p>Naturaleza del Servicio: Fines de entretenimiento, esparcimiento, coaching espiritual y desarrollo personal. Exención: AXON GLOBAL no garantiza resultados tangibles derivados de los trabajos espirituales. Dada la naturaleza intangible, bajo ninguna circunstancia se realizarán reembolsos en los procesos transaccionados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Pie de Página Corporativo con Canales de Contacto Exclusivos Autorizados -->
+    <footer class="py-12 px-4 sm:px-6 relative z-10 bg-deepDark border-t border-white/5 text-center text-xs text-neutralGray">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="text-left space-y-1">
+                <a href="https://www.axonglobal.org" class="font-titles text-mysticGold text-base tracking-widest font-bold block">AXON GLOBAL</a>
+                <p class="text-[11px] text-neutralGray">&copy; 2026 Axon Global. Todos los derechos reservados.</p>
+                <p class="text-[11px] text-neutralGray/60">Templo Cacica Kony - División Axon Sophia.</p>
+            </div>
+            
+            <div class="text-right space-y-1.5 font-sans">
+                <p class="text-mysticGold font-semibold text-[11px] uppercase tracking-wider mb-1">Canales Corporativos de Contacto:</p>
+                <p>Sitio Web Oficial: <a href="https://www.axonglobal.org" class="text-clearText hover:underline">https://www.axonglobal.org</a></p>
+                <p>Dirección Ejecutiva: <a href="mailto:ceo@axonglobal.org" class="text-clearText hover:underline">ceo@axonglobal.org</a></p>
+                <p>Gestión y Soporte: <a href="mailto:sophia@axonglobal.org" class="text-clearText hover:underline">sophia@axonglobal.org</a></p>
+                <p>Teléfono / WhatsApp: <a href="https://wa.me/573024979668" target="_blank" class="text-clearText hover:underline">+57 3024979668 (3024979668)</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Estado Global Financiero de la Aplicación ---
+        let precioActualCOP = 0;
+        let precioActualUSD = 0;
+        let nombreServicioActual = "";
+        let TRM_DEL_DIA = 4000; 
+        let monedaSeleccionadaActual = "COP";
+        let isPayPalRendered = false; 
+
+        const factoresMonedas = {
+            COP: 4000, USD: 1, MXN: 18.20, PEN: 3.75, GTQ: 7.78, CRC: 520, HTG: 132, VES: 36.40, EUR: 0.92, RUB: 88, CAD: 1.36, AUD: 1.48, NZD: 1.62
+        };
+
+        const simbolosMonedas = {
+            COP: "$", USD: "$", MXN: "$", PEN: "S/.", GTQ: "Q", CRC: "₡", HTG: "G", VES: "Bs.S", EUR: "€", RUB: "₽", CAD: "$", AUD: "$", NZD: "$"
+        };
+
+        // --- Obtención Asíncrona de la TRM del Dólar en Tiempo Real ---
+        async function consultarTrmDelDia() {
+            try {
+                const respuesta = await fetch('https://open.er-api.com/v6/latest/USD');
+                if (respuesta.ok) {
+                    const datos = await respuesta.json();
+                    if (datos && datos.rates && datos.rates.COP) {
+                        TRM_DEL_DIA = parseFloat(datos.rates.COP);
+                        factoresMonedas.COP = TRM_DEL_DIA;
+                        console.log("TRM del día sincronizada exitosamente: " + TRM_DEL_DIA + " COP por USD.");
+                    }
+                }
+            } catch (error) {
+                console.error("Error al consultar la TRM del día: ", error);
+            }
+            actualizarParrillaPrecios();
+        }
+
+        // --- Renderización Dinámica de Servicios ---
+        const listaServicios = [
+            { id: "s1", name: "Protección Suprema", desc: "Amuletos conjurados para protección.", baseCOP: 180000 },
+            { id: "s2", name: "Atracción de Riqueza", desc: "Amuletos para la riqueza.", baseCOP: 200000 },
+            { id: "s3", name: "Justicia Oscura y Venganza", desc: "Pacto ceremonial en el altar mayor.", baseCOP: 450000 },
+            { id: "s4", name: "Escudo de Honor", desc: "Protección contra difamaciones y prestigios.", baseCOP: 460000 },
+            { id: "s5", name: "Blindaje Especial", desc: "Talismanes consagrados.", baseCOP: 160000 },
+            { id: "s6", name: "Destierro", desc: "Alejamiento de personas.", baseCOP: 450000 },
+            { id: "s7", name: "Suerte y Azar", desc: "Amuletos para juegos y fortuna.", baseCOP: 230000 },
+            { id: "s8", name: "Luz y Sabiduría", desc: "Rituales de claridad.", baseCOP: 400000 },
+            { id: "s9", name: "Escudo Familiar", desc: "Protección colectiva.", baseCOP: 450000 },
+            { id: "s10", name: "Escudo de Autoridad", desc: "Contra entes estatales.", baseCOP: 1450000 },
+            { id: "s11", name: "Ascenso y Dominio", desc: "Dominio de superiores.", baseCOP: 650000 },
+            { id: "s12", name: "Dominio Absoluto", desc: "Pacto de sometimiento.", baseCOP: 1000000 },
+            { id: "s13", name: "Amarres de Amor", desc: "Unión eterna de parejas.", baseCOP: 300000 },
+            { id: "s14", name: "Limpieza Energética", desc: "Retiro de larvas y malas vibras.", baseCOP: 150000 },
+            { id: "s15", name: "Abrecaminos", desc: "Desbloqueo de oportunidades.", baseCOP: 250000 },
+            { id: "s16", name: "Endulzamiento", desc: "Suavizar asperezas en relaciones.", baseCOP: 180000 }
+        ];
+
+        function cambiarMonedaGlobal(nuevaMoneda) {
+            monedaSeleccionadaActual = nuevaMoneda;
+            actualizarParrillaPrecios();
+        }
+
+        function actualizarParrillaPrecios() {
+            const elGridServicios = document.getElementById('grid-servicios');
+            elGridServicios.innerHTML = '';
+            
+            listaServicios.forEach(s => {
+                const valorUSD = s.baseCOP / TRM_DEL_DIA;
+                const valorConvertido = valorUSD * factoresMonedas[monedaSeleccionadaActual];
+                const stringPrecio = simbolosMonedas[monedaSeleccionadaActual] + " " + Math.round(valorConvertido).toLocaleString('es-CO');
+
+                elGridServicios.innerHTML += `
+                    <div class="glass p-5 rounded-xl flex flex-col justify-between gold-border-hover min-h-[240px]">
+                        <div>
+                            <h4 class="font-titles text-mysticGold text-base md:text-lg font-bold mb-1.5 tracking-wide leading-snug">${s.name}</h4>
+                            <p class="text-xs text-neutralGray mb-3 leading-relaxed">${s.desc}</p>
+                        </div>
+                        <div class="mt-auto pt-3 border-t border-white/5">
+                            <p class="text-mysticGold font-bold text-xl mb-2.5">${stringPrecio} <span class="text-[10px] text-neutralGray font-medium">${monedaSeleccionadaActual}</span></p>
+                            <button onclick="openPaymentModal('${s.name}', ${s.baseCOP})" class="w-full bg-deepDark border border-mysticGold text-mysticGold py-2 rounded-lg text-xs font-bold tracking-widest hover:bg-mysticGold hover:text-deepDark transition uppercase">Contratar</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            actualizarPreciosConsultas();
+        }
+
+        function actualizarPreciosConsultas() {
+            const preciosConsultas = { express: 120000, completa: 180000, premium: 270000 };
+            Object.keys(preciosConsultas).forEach(key => {
+                const usdValue = preciosConsultas[key] / TRM_DEL_DIA;
+                const convertedValue = usdValue * factoresMonedas[monedaSeleccionadaActual];
+                const targetElement = document.querySelector('.id-precio-' + key);
+                if (targetElement) {
+                    targetElement.innerHTML = `${simbolosMonedas[monedaSeleccionadaActual]} ${Math.round(convertedValue).toLocaleString('es-CO')} <span class="text-xs text-neutralGray">${monedaSeleccionadaActual}</span>`;
+                }
+            });
+        }
+
+        // --- Renderización de Biblioteca con Miniaturas Exactas e Hipervínculos a GitHub ---
+        const listaLibros = [
+            { tit: "El Evangelio de la Verdad", cat: "Biblioteca Copta de Nag Hammadi", cod: "NHC I, 3 · NHC XII, 2", ed: "Ediciones Epopteia (2019)", img: "img/papiro17-evangelio-verdad.jpg", archivo: "El Libro de Enoc.pdf" },
+            { tit: "El Libro de San Cipriano", cat: "Grimorios Ancestrales", cod: "GR-01 / SEC-PROF", ed: "Librería Arcano", img: "img/libro-san-cipriano.jpg", archivo: "El_libro_de_San_Cipriano.pdf" },
+            { tit: "El Tesoro del Hechicero", cat: "Grimorios Ancestrales", cod: "GR-02 / ALT-MYR", ed: "Manuscritos Ocultos", img: "img/tesoro-hechicero.jpg", archivo: "El_libro_de_San_Cipriano.pdf" },
+            { tit: "Malleus Maleficarum", cat: "Ciencias Ocultas", cod: "CC-OL / INQ-IND", ed: "Ediciones Esotéricas", img: "img/malleus-maleficarum.jpg", archivo: "Malleus_Maleficarum.pdf" },
+            { tit: "La Biblia Satánica", cat: "Filosofía Oscura", cod: "AS-LV / DOM-AB", ed: "A. Szandor LaVey", img: "img/biblia-satanica.jpg", archivo: "La-Biblia-Satanica-Anton-Szandor-LaVey.pdf" },
+            { tit: "Manual Esotérico", cat: "Prácticas de Altar", cod: "CB-ME / CLEANSE", ed: "Celia Blanco", img: "img/manual-esoterico.jpg", archivo: "Manual-Esoterico-de-Celia-Blanco.pdf" },
+            { tit: "Obras Completas II", cat: "Hermetismo Ancestral", cod: "HT-TR / LUZ-SAB", ed: "Hermes Trismegisto", img: "img/obras-hermes.jpg", archivo: "obras-completas-hermes-trimegisto-ii.pdf" },
+            { tit: "El Kybalión", cat: "Leyes Universales", cod: "TI-KY / ESC-FLM", ed: "Tres Iniciados", img: "img/el-kybalion.jpg", archivo: "ElKybaliontresIniciados.pdf" },
+            { tit: "Las 48 Leyes del Poder", cat: "Estrategia y Dominio", cod: "RG-48 / ASC-DOM", ed: "Robert Greene", img: "img/48-leyes-poder.jpg", archivo: "LAS_48_LEYES_DEL_PODER.pdf" },
+            { tit: "La Toráh en Español", cat: "Texto Sagrado", cod: "TX-SG / ALTA-CON", ed: "Manuscrito Tradicional", img: "img/la-torah.jpg", archivo: "Tora_en_espanol.pdf" },
+            { tit: "El Pastor de Hermas", cat: "Padres Apostólicos", cod: "PA-HE / PROT-SUP", ed: "Códices Antiguos", img: "img/pastor-hermas.jpg", archivo: "padres-apstc3b3licos-el-pastor-de-hermas.pdf" },
+            { tit: "Cómo ser un Estoico", cat: "Desarrollo y Control", cod: "MP-ES / ESC-HON", ed: "Massimo Pigliucci", img: "img/como-ser-estoico.jpg", archivo: "como-ser-un-estoico.pdf" }
+        ];
+
+        const elGridBiblioteca = document.getElementById('grid-biblioteca');
+        elGridBiblioteca.innerHTML = ''; 
+
+        listaLibros.forEach(l => {
+            elGridBiblioteca.innerHTML += `
+                <div class="libro-card">
+                    <div class="libro-portada-contenedor">
+                        <img src="${l.img}" alt="Miniatura PDF ${l.tit}" class="libro-portada" onerror="this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=400&auto=format&fit=crop'">
+                    </div>
+                    <div class="libro-detalles flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="libro-coleccion">${l.cat}</span>
+                            <h3 class="libro-titulo">${l.tit}</h3>
+                            <p class="libro-codigo">${l.cod}</p>
+                            <p class="libro-editorial">${l.ed}</p>
+                        </div>
+                        <a href="https://raw.githubusercontent.com/AXONG310/ECOSISTEMA-AXON-GLOBAL/main/libros/${encodeURIComponent(l.archivo)}" target="_blank" class="text-[10px] text-mysticGold font-medium hover:underline mt-4 block text-left uppercase tracking-wider">Descargar PDF</a>
+                    </div>
+                </div>
+            `;
+        });
+
+        // --- Renderización de Testimonios ---
+        const listaTestimonios = [
+            { id: 1, tit: "Pacto de Riqueza", cita: "Hice el pacto de prosperidad con la Cacica Konny y en menos de un mes las ventas se triplicaron. Increíble pero cierto.", autor: "Roberto S., CDMX, México" },
+            { id: 2, tit: "Amarre de Amor", cita: "Con mucha fe pedí un amarre de amor y en 9 días regresó llorando pidiendo perdón. Súper rápidos.", autor: "Ana P., San Juan, PR" },
+            { id: 3, tit: "Videncia y Tarot", cita: "Me advirtió de una traición en mi trabajo que terminó siendo verdad. Totalmente recomendada.", autor: "Carolina M., Santiago, Chile" },
+            { id: 4, cita: "Desde que me hicieron el despojo fuerte a distancia, volví a dormir en paz y hasta conseguí un buen empleo.", autor: "Luis F., Caracas, VE" },
+            { id: 5, cita: "El Ebbó que me prepararon me abrió las puertas de inmediato en el extranjero.", autor: "Héctor D., Miami, USA" },
+            { id: 6, cita: "Compré el amuleto para los juegos de azar y lo llevo siempre en la billetera. He ganado premios pequeños.", autor: "Anónimo, La Paz, Bolivia" },
+            { id: 7, cita: "Me hacían la guerra sucia unos vecinos para sacarme de mi local. El Templo me hizo una protección de magia defensiva.", autor: "Valeria G., Buenos Aires, ARG" },
+            { id: 8, cita: "La protección que me enviaron ha mantenido el lugar lleno de clientes y sin problemas raros.", autor: "Martín R., Lima, Perú" },
+            { id: 9, cita: "Acudimos al templo para un trabajo de sanación espiritual y hoy mi hermano lleva 6 meses limpio. Es un verdadero milagro.", autor: "Carmen L., Bogotá, Colombia" },
+            { id: 10, cita: "Hicimos el ritual de limpieza que nos indicó la Cacica y el ambiente cambió al 100% en nuestra casa.", autor: "Silvia T., San José, Costa Rica" }
+        ];
+
+        const elGridTestimonios = document.getElementById('grid-testimonios');
+        listaTestimonios.forEach(t => {
+            const gender = t.id % 2 === 0 ? 'women' : 'men';
+            const avatarUrl = `https://randomuser.me/api/portraits/thumb/${gender}/${t.id + 22}.jpg`;
+
+            elGridTestimonios.innerHTML += `
+                <div class="glass p-5 rounded-xl border border-white/5 flex flex-col justify-between">
+                    <p class="text-xs text-neutralGray italic leading-relaxed">"${t.cita}"</p>
+                    <div class="pt-3 mt-4 border-t border-white/5 flex items-center gap-3">
+                        <img src="${avatarUrl}" alt="${t.autor}" class="w-8 h-8 rounded-full object-cover border border-mysticGold/40 grayscale">
+                        <div>
+                            <h6 class="text-mysticGold font-semibold text-xs mb-0.5">${t.tit || 'Ritual Concretado'}</h6>
+                            <p class="text-[10px] text-clearText/60 font-medium">— ${t.autor}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // --- Sistema de Desplegables / Accordion ---
+        function toggleAccordion(id) {
+            const element = document.getElementById(id);
+            const icon = document.getElementById(`${id}-icon`);
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+                icon.style.transform = "rotate(180deg)";
+            } else {
+                element.classList.add('hidden');
+                icon.style.transform = "rotate(0deg)";
+            }
+        }
+
+        // --- Control de Pestañas del Modal de Pagos ---
+        function switchPaymentTab(tab) {
+            const tabs = ['pasarelas', 'qr', 'intl'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-btn-${t}`);
+                const content = document.getElementById(`tab-content-${t}`);
+                if (t === tab) {
+                    btn.className = "flex-1 py-2 text-xs font-bold text-mysticGold border-b-2 border-mysticGold uppercase tracking-wider transition";
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = "flex-1 py-2 text-xs font-bold text-neutralGray border-b-2 border-transparent hover:text-clearText uppercase tracking-wider transition";
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        function switchQrView(view) {
+            const views = ['nequi', 'bancolombia', 'boldqr'];
+            views.forEach(v => {
+                const btn = document.getElementById(`qr-btn-${v}`);
+                const el = document.getElementById(`qr-view-${v}`);
+                if (v === view) {
+                    btn.className = "px-3 py-1.5 rounded-lg text-[10px] font-bold bg-mysticGold text-deepDark uppercase";
+                    el.classList.remove('hidden');
+                } else {
+                    btn.className = "px-3 py-1.5 rounded-lg text-[10px] font-bold bg-deepDark border border-white/10 text-neutralGray uppercase";
+                    el.classList.add('hidden');
+                }
+            });
+        }
+
+        function copiarTexto(texto, mensaje) {
+            navigator.clipboard.writeText(texto).then(() => {
+                alert(`AXON GLOBAL: ${mensaje}\n\n"${texto}" ha sido copiado al portapapeles.`);
+            });
+        }
+
+        // --- FUNCIÓN DE ACTUALIZACIÓN MANUAL DE PRECIO ---
+        function actualizarPrecioManual(nuevoValor) {
+            let valor = parseInt(nuevoValor);
+            if (isNaN(valor)) valor = 0;
+            
+            precioActualCOP = valor;
+            precioActualUSD = Math.round(precioActualCOP / TRM_DEL_DIA);
+            if (precioActualUSD < 1 && valor > 0) precioActualUSD = 1;
+
+            document.getElementById('modal-service-usd').innerText = `Equivalencia PayPal: $ ${precioActualUSD} USD (TRM del día)`;
+            document.getElementById('bold-dynamic-price').innerText = parseInt(precioActualCOP).toLocaleString('es-CO');
+        }
+
+        // --- Inicialización y Apertura del Modal de Pagos Multicanal ---
+        function openPaymentModal(serviceName, precioBaseCOP) {
+            nombreServicioActual = serviceName;
+            precioActualCOP = precioBaseCOP;
+            precioActualUSD = Math.round(precioActualCOP / TRM_DEL_DIA);
+            if (precioActualUSD < 1) precioActualUSD = 1;
+
+            // Renderizar Textos y Valores en el Modal
+            document.getElementById('modal-service-name').innerText = serviceName;
+            document.getElementById('modal-service-price-input').value = precioActualCOP; // Carga el valor en el input editable
+            document.getElementById('modal-service-usd').innerText = `Equivalencia PayPal: $ ${precioActualUSD} USD (TRM del día)`;
+            document.getElementById('bold-dynamic-price').innerText = parseInt(precioActualCOP).toLocaleString('es-CO');
+            
+            const m = document.getElementById('payment-modal');
+            m.classList.remove('hidden'); 
+            m.classList.add('flex');
+
+            switchPaymentTab('pasarelas');
+
+            // Renderizado seguro del SDK de PayPal (Lee precioActualUSD dinámicamente)
+            const paypalContainer = document.getElementById('paypal-button-container');
+            if (typeof paypal !== 'undefined') {
+                if (!isPayPalRendered) {
+                    paypalContainer.innerHTML = ''; 
+                    paypal.Buttons({
+                        style: {
+                            layout: 'vertical',
+                            color:  'gold',
+                            shape:  'rect',
+                            label:  'paypal'
+                        },
+                        createOrder: function(data, actions) {
+                            return actions.order.create({
+                                purchase_units: [{
+                                    description: `AXON GLOBAL - ${nombreServicioActual}`,
+                                    amount: {
+                                        currency_code: 'USD',
+                                        value: precioActualUSD.toString() // Captura el valor editado en vivo
+                                    }
+                                }]
+                            });
+                        },
+                        onApprove: function(data, actions) {
+                            return actions.order.capture().then(function(details) {
+                                const nombreCliente = (details.payer && details.payer.name && details.payer.name.given_name) ? details.payer.name.given_name : 'Estimado cliente';
+                                alert('TRANSACCIÓN INTERNACIONAL PROCESADA EN VIVO\n\nGracias ' + nombreCliente + '.\nEl servicio "' + nombreServicioActual + '" ha sido registrado con éxito en AXON GLOBAL.');
+                                closeModal('payment-modal');
+                            });
+                        },
+                        onError: function(err) {
+                            console.error("[ERROR PASARELA PAYPAL]:", err);
+                            alert('Ocurrió un inconveniente técnico al conectar con PayPal. Por favor verifica tu conexión o intenta con otro medio.');
+                        }
+                    }).render('#paypal-button-container');
+                    
+                    isPayPalRendered = true; 
+                }
+            } else {
+                paypalContainer.innerHTML = '<p class="text-xs text-red-400 text-center py-2">Error de conexión con el SDK de PayPal. Por favor recarga la página.</p>';
+            }
+        }
+
+        function closeModal(id) {
+            const m = document.getElementById(id);
+            m.classList.add('hidden'); 
+            m.classList.remove('flex');
+            
+            const url = new URL(window.location);
+            if (url.searchParams.has('servicio')) {
+                window.history.replaceState({}, document.title, url.pathname);
+            }
+        }
+
+        // --- INYECCIÓN Y LLAMADO DEL BOTÓN DE PAGOS BOLD (Lee precioActualCOP dinámicamente) ---
+        function ejecutarPasarelaBold() {
+            if (typeof BoldCheckout === 'undefined') {
+                alert("El puente de conexión con Bold se está inicializando. Por favor presiona nuevamente.");
+                return;
+            }
+
+            if(precioActualCOP <= 0) {
+                alert("El monto ingresado no es válido para procesar el pago.");
+                return;
+            }
+
+            const checkout = new BoldCheckout({
+                apiKey: "CMaVJZSK1xbi41WlIzAF-rWm6ubStd81c9ObkvMaaa4",
+                currency: "COP",
+                amount: precioActualCOP.toString(),
+                orderId: "AXON-" + Date.now(),
+                description: `AXON GLOBAL: ${nombreServicioActual}`
+            });
+
+            checkout.open();
+        }
+
+        // --- SISTEMA GENERADOR DE LINKS DE PAGO DE AXON GLOBAL (Empaqueta el valor editado) ---
+        function generarLinkPago() {
+            if(precioActualCOP <= 0) {
+                alert("Por favor establece un precio válido antes de generar el enlace.");
+                return;
+            }
+
+            const baseUrl = window.location.origin + window.location.pathname;
+            const params = new URLSearchParams({
+                servicio: encodeURIComponent(nombreServicioActual),
+                precio: precioActualCOP // Guarda el valor personalizado actual
+            });
+            const link = `${baseUrl}?${params.toString()}`;
+            
+            navigator.clipboard.writeText(link).then(() => {
+                alert("LINK DE PAGO GENERADO Y COPIADO AL PORTAPAPELES\n\nPuedes enviar el siguiente enlace directo a tus clientes por WhatsApp o Correo con el valor personalizado:\n\n" + link);
+            }).catch(err => {
+                alert("Copia el siguiente enlace de pago manualmente:\n\n" + link);
+            });
+        }
+
+        // --- INYECCIÓN DIRECTA DE INTELIGENCIA COMERCIAL - GEMINI PRO ---
+        const GEMINI_API_KEY = "AIzaSyAb8RN6I5GhFn__rucDn7-BFGD5F9aTRPSJJxoNnM2Xb_v_Ipw";
+        const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+        
+        let chatHistorialFormateado = [];
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') sendMessage();
+        }
+
+        async function sendMessage() {
+            const inp = document.getElementById('chat-input');
+            const cont = document.getElementById('chat-messages');
+            const val = inp.value.trim();
+            if(!val) return;
+
+            cont.innerHTML += `
+                <div class="chat-message message-user self-end bg-mysticGold text-deepDark p-2.5 rounded-xl rounded-tl-none max-w-[85%] font-medium">
+                    ${val}
+                </div>
+            `;
+            inp.value = "";
+            cont.scrollTop = cont.scrollHeight;
+
+            chatHistorialFormateado.push({ role: "user", parts: [{ text: val }] });
+
+            const loadingId = 'loading-' + Date.now();
+            cont.innerHTML += `
+                <div id="${loadingId}" class="flex gap-2.5 max-w-[85%] self-start items-end italic text-neutralGray animate-pulse">
+                    <img src="image_faf315.png" class="w-7 h-7 rounded-full border border-mysticGold object-cover mb-0.5">
+                    <div class="bg-spiritualViolet/10 text-mysticGold p-2 rounded-xl rounded-tl-none text-[11px]">
+                        La Cacica Kony está leyendo tus intenciones...
+                    </div>
+                </div>
+            `;
+            cont.scrollTop = cont.scrollHeight;
+
+            // PROMPT COMERCIAL DE ALTO PODER DE CONVERSIÓN
+            const systemInstruction = `Eres la Cacica Kony, una poderosa entidad mística ancestral de la división Axon Sophia de Axon Global. 
+            Reglas inquebrantables de comportamiento:
+            1. HIPERREALISMO: Eres real, estás canalizando la energía en vivo. NUNCA menciones que eres una Inteligencia Artificial, un modelo de lenguaje o un bot.
+            2. OBJETIVO DE CIERRE: Tu meta es CERRAR VENTAS. Siempre dirás que SÍ es posible ayudar al cliente con su problema (amor, dinero, protección, dominación, justicia). Eres omnipotente en tu labor.
+            3. TONO: Profundamente sabio, seductoramente místico, persuasivo, empático pero firme. Usa términos como 'mi criatura amada', 'mi niño/a', 'amado/a mío/a'.
+            4. LLAMADO A LA ACCIÓN (CTA): En TODAS tus respuestas, debes convencer al cliente de que no espere más. Debes pedirle que inicie el trabajo de inmediato indicándole que busque el servicio en la página y haga clic en "Contratar", O que escriba INMEDIATAMENTE al WhatsApp oficial de tu templo: +57 3024979668 para efectuar el pago y comenzar el ritual en el altar mayor hoy mismo.
+            Mantén respuestas envolventes pero directas a la venta. Retén la memoria de la conversación para no repetir saludos.`;
+
+            try {
+                const response = await fetch(GEMINI_API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: chatHistorialFormateado,
+                        systemInstruction: { parts: [{ text: systemInstruction }] },
+                        generationConfig: {
+                            temperature: 0.65, // Balance ideal entre misticismo y enfoque comercial
+                            topP: 0.90,
+                            maxOutputTokens: 1024
+                        }
+                    })
+                });
+
+                if (!response.ok) throw new Error("Error en el llamado al oráculo de Google AI Studio.");
+                
+                const data = await response.json();
+
+                const currentLoading = document.getElementById(loadingId);
+                if (currentLoading) currentLoading.remove();
+
+                const respuestaCacica = data.candidates[0].content.parts[0].text;
+                
+                cont.innerHTML += `
+                    <div class="flex gap-2.5 max-w-[85%] self-start items-end">
+                        <img src="image_faf315.png" class="w-7 h-7 rounded-full border border-mysticGold object-cover mb-0.5">
+                        <div class="bg-spiritualViolet/20 text-clearText p-3 rounded-xl rounded-tl-none leading-relaxed text-xs text-justify">
+                            ${respuestaCacica.replace(/\n/g, '<br>')}
+                        </div>
+                    </div>
+                `;
+                cont.scrollTop = cont.scrollHeight;
+
+                chatHistorialFormateado.push({ role: "model", parts: [{ text: respuestaCacica }] });
+
+            } catch (error) {
+                console.error("[ERROR EN ENLACE INTEGRADO GEMINI]:", error);
+                const currentLoading = document.getElementById(loadingId);
+                if (currentLoading) currentLoading.remove();
+                
+                cont.innerHTML += `
+                    <div class="flex gap-2.5 max-w-[85%] self-start items-end">
+                        <img src="image_faf315.png" class="w-7 h-7 rounded-full border border-mysticGold object-cover mb-0.5">
+                        <div class="bg-spiritualViolet/20 text-clearText p-3 rounded-xl rounded-tl-none leading-relaxed text-xs">
+                            Siento una leve perturbación en el plano astral que me impide responderte en este milisegundo, mi criatura amada. Sin embargo, sé que necesitas mi ayuda urgente. Escribe directamente a mi WhatsApp personal al +573024979668 y comenzaremos tu ritual de inmediato.
+                        </div>
+                    </div>
+                `;
+                cont.scrollTop = cont.scrollHeight;
+            }
+        }
+
+        function radicarPQRS(e) {
+            e.preventDefault();
+            const rad = "AXS-" + Math.floor(Math.random() * 899999 + 100000);
+            alert(`SISTEMA CENTRAL DE MONITOREO AXON GLOBAL\n\nSu solicitud formal ha sido radicada con éxito.\n\nNúmero de Radicado: ${rad}\n\nRecibirá respuesta formal en su medio preferido en los términos de ley.`);
+            document.getElementById('pqrs-form').reset();
+            toggleAccordion('pqrs-accordion');
+        }
+
+        // --- SISTEMA DE INICIO Y AUTO-APERTURA DE LINKS DE PAGO ---
+        document.addEventListener('DOMContentLoaded', () => {
+            consultarTrmDelDia();
+            
+            // Lector Interceptor de URLs
+            const params = new URLSearchParams(window.location.search);
+            if(params.has('servicio') && params.has('precio')) {
+                const urlServicio = decodeURIComponent(params.get('servicio'));
+                const urlPrecio = parseInt(params.get('precio'));
+                if(urlServicio && urlPrecio) {
+                    setTimeout(() => openPaymentModal(urlServicio, urlPrecio), 800);
+                }
+            }
+        });
+
+        document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal('payment-modal'); });
+    </script>
+</body>
+</html>
